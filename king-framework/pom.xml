@@ -1,25 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>king</artifactId>
+        <groupId>dyeing.system</groupId>
+        <version>${revision}</version>
+    </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>king-common</module>
+        <module>king-spring-boot-starter-mybatis</module>
+        <module>king-spring-boot-starter-redis</module>
+        <module>king-spring-boot-starter-web</module>
+        <module>king-spring-boot-starter-security</module>
+        <module>king-spring-boot-starter-websocket</module>
 
-  <groupId>dyeing.system</groupId>
-  <artifactId>king-framework</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+        <module>king-spring-boot-starter-monitor</module>
+        <module>king-spring-boot-starter-protection</module>
+        <module>king-spring-boot-starter-job</module>
+        <module>king-spring-boot-starter-mq</module>
 
-  <name>king-framework</name>
-  <url>http://maven.apache.org</url>
+        <module>king-spring-boot-starter-excel</module>
+        <module>king-spring-boot-starter-test</module>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+        <module>king-spring-boot-starter-biz-tenant</module>
+        <module>king-spring-boot-starter-biz-data-permission</module>
+        <module>king-spring-boot-starter-biz-ip</module>
+    </modules>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <artifactId>king-framework</artifactId>
+    <description>
+        该包是技术组件，每个子包，代表一个组件。每个组件包括两部分：
+            1. core 包：是该组件的核心封装
+            2. config 包：是该组件基于 Spring 的配置
+
+        技术组件，也分成两类：
+            1. 框架组件：和我们熟悉的 MyBatis、Redis 等等的拓展
+            2. 业务组件：和业务相关的组件的封装，例如说数据字典、操作日志等等。
+        如果是业务组件，Maven 名字会包含 biz
+    </description>
+    <url>https://github.com/YunaiV/ruoyi-vue-pro</url>
+
 </project>
